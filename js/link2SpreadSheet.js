@@ -11,9 +11,6 @@ function send2SpreadSheet(){
     $.ajax({
     type: "get",
     url: "https://script.google.com/macros/s/AKfycbzEIRW3u6rIyAwnquSH4PZXxsSFMyoB67mPqsGJpX3AXSfc8znO/exec",
-    data: data,
-    success: function (response) {
-            alert('success!!!');
-        }
+    data: data
     });
 };
