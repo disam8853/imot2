@@ -1,10 +1,10 @@
 function send2SpreadSheet(){
-    // var name    = $("#name").val();
-    // var email   = $("#email").val();
-    // var phone   = $("#phone").val();
-    var name    = 'nnn';
-    var email   = 'eee';
-    var phone   = 'ppp';
+    var name    = $("#name").val();
+    var email   = $("#email").val();
+    var phone   = $("#phone").val();
+    // var name    = 'nnn';
+    // var email   = 'eee';
+    // var phone   = 'ppp';
     var data = {
         name: name,
         email: email,

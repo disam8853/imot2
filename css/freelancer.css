@@ -54,6 +54,10 @@ hr.star-dark:after {
   background-color: white;
 }
 
+img {
+  width: 100%;
+}
+
 section {
   padding: 6rem 0;
 }
