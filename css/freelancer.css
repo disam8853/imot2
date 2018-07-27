@@ -54,10 +54,6 @@ hr.star-dark:after {
   background-color: white;
 }
 
-img {
-  width: 100%;
-}
-
 section {
   padding: 6rem 0;
 }
@@ -72,6 +68,10 @@ section h2 {
     font-size: 3rem;
     line-height: 2.5rem;
   }
+}
+
+.contact_img {
+  width: 100%;
 }
 
 .btn-xl {
