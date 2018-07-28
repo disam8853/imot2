@@ -83,6 +83,10 @@ section h2 {
   margin: 10px;
 }
 
+.phone {
+  color: white;
+}
+
 .btn-xl {
   padding: 1rem 1.75rem;
   font-size: 1.25rem;
@@ -351,7 +355,7 @@ form .row:first-child .floating-label-form-group {
 }
 
 a {
-  color: white;
+  color: #18BC9C;
 }
 
 a:focus, a:hover, a:active {
