@@ -48,9 +48,9 @@ function start(k) {
             clearInterval(tt);
 
             setTimeout(function() {
-                $(".option").removeAttr("disabled");
                 $(".alert:eq(0)").fadeOut();
                 if (k + 1 <= 5) {
+                    $(".option").removeAttr("disabled");
                     numQuestion = k + 1;
                     start(k + 1);
                 }
@@ -72,7 +72,7 @@ $(".option").click(function(){
 
     // correct
     if ($(this).attr("data-id") == ans) {
-        $(this).addClass("bg-success");
+        $(this).addClass("btn-success");
         $(".alert:eq(1)").fadeIn()
                          .html("答對了！！！");
         score++;
@@ -80,9 +80,9 @@ $(".option").click(function(){
     // incorrect
     else
     {
-        $(".alert:eq(0)").fadeIn();
-        $(".alert:eq(0)").html("答錯了...");
-        $(this).addClass("bg-danger");
+        $(".alert:eq(0)").fadeIn()
+                         .html("答錯了...");
+        $(this).addClass("btn-danger");
     }
     $("#score").html("Score: " + score);
     $(".option").attr("disabled", "true");
@@ -90,8 +90,8 @@ $(".option").click(function(){
     if (numQuestion + 1 <= 5) 
     {
         setTimeout(function() {
-            $(".option").removeClass("bg-info bg-danger")
-                        .addClass("bg-primary");
+            $(".option").removeClass("btn-success btn-danger")
+                        .addClass("btn-primary");
             numQuestion++;
             $(".option").removeAttr("disabled");
             start(numQuestion);
@@ -117,7 +117,7 @@ $("#button-addon2").click(function() {
     $("#name").html(name);
 
     for (i = 0; i < 5; i++) {
-        var number = Math.floor((Math.random() * 24) + 2);
+        var number = Math.floor((Math.random() * 27) + 2);
         // console.log(number);
         var data = {
             number: number,
