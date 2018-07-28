@@ -7,6 +7,7 @@ var questions = {};
 var name;
 
 function endGame(){
+    $(".alert").hide();
     // display the result to users
     $(".alert:eq(1)").fadeIn()
                      .html("遊戲結束！恭喜你獲得" + score + "分。");
@@ -87,20 +88,20 @@ $(".option").click(function(){
     $("#score").html("Score: " + score);
     $(".option").attr("disabled", "true");
     clearInterval(tt);
-    if (numQuestion + 1 <= 5) 
-    {
-        setTimeout(function() {
+    setTimeout(function() {
+        if (numQuestion + 1 <= 5) 
+        {
             $(".option").removeClass("btn-success btn-danger")
                         .addClass("btn-primary");
             numQuestion++;
             $(".option").removeAttr("disabled");
             start(numQuestion);
-        }, 2000);
-    }
-    else
-    {
-        endGame();
-    }
+        }
+        else
+        {
+            endGame();
+        }
+    }, 2000);
 });
 
 // prepare the game
@@ -116,11 +117,22 @@ $("#button-addon2").click(function() {
     }
     $("#name").html(name);
 
+    // get 5 different number
+    var number = [];
+    for (i = 0; i < 5; i++){
+        var temp = Math.floor((Math.random() * 27) + 2);
+        while (number.includes(temp) == true)
+        {
+            temp = Math.floor((Math.random() * 27) + 2);
+        }
+        number[i] = temp;
+    }
+
     for (i = 0; i < 5; i++) {
-        var number = Math.floor((Math.random() * 27) + 2);
-        // console.log(number);
+        var num = number[i];
+        // console.log(num);
         var data = {
-            number: number,
+            number: num,
         }
 
         $.ajax({
@@ -131,9 +143,9 @@ $("#button-addon2").click(function() {
             success: function(data) {
                 k++;
                 questions[k] = data;
-                console.log(data);
+                // console.log(data);
                 if (k == 5) {
-                    console.log(questions);
+                    // console.log(questions);
                     start(1);
                 }
             },
