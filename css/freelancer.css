@@ -70,6 +70,19 @@ section h2 {
   }
 }
 
+.alert {
+  display: none;
+}
+
+.contact_img {
+  width: 200px;
+}
+
+.option {
+  width: 88%;
+  margin: 10px;
+}
+
 .btn-xl {
   padding: 1rem 1.75rem;
   font-size: 1.25rem;
@@ -94,6 +107,10 @@ section h2 {
   height: 3.5rem;
   background-color: rgba(33, 37, 41, 0.5);
   line-height: 3.1rem;
+}
+
+#game-shape {
+  display: none;
 }
 
 #mainNav {
@@ -379,4 +396,8 @@ a:focus, a:hover, a:active {
 .btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active {
   background-color: #1a252f;
   border-color: #1a252f;
+}
+
+.download-a {
+  color: white;
 }
