@@ -1,34 +1,118 @@
 // start the game
 var score = 0;
-function start(q, k) {
-    var time = 6;
-    for (i = 0; i < 1; i++){
-        time = 6;
-        $("#timer").html("Time Remaining: 6");
-        $("#question").html(q[k].question);
-        for (var i = 0; i < 4; i++) {
-            $(".option:eq(" + i + ")").html(q[k].opt[i]);
-        }
-        
-        var tt = setInterval(function() {
-            time--;
-            if (time < 0) {
-                clearInterval(tt);
-                if (k + 1 <= 5) {
-                    start(q, k + 1);
-                }
-            }
-            else
-                $("#timer").html("Time Remaining: " + time);
-        }, 1000);
+var ans;
+var tt;
+var numQuestion = 1;
+var questions = {};
+var name;
 
+function endGame(){
+    // display the result to users
+
+    // send result to google sheet
+    var data = {
+        name: name,
+        score: score,
     }
+    $.ajax({
+        type: "get",
+        url: "https://script.google.com/macros/s/AKfycbxVjS6iapa01z0jew2Cvd87q6GXcylEqNDcF8vjgx2CJ5R2WZ8s/exec",
+        data: data,
+        dataType: 'json',
+        error: function(e) {
+            console.log(e);
+        }
+    });
 }
 
+function start(k) {
+    var time = 6;
+    ans = questions[k].ans.charAt(3);
+
+    $(".alert").fadeOut();
+    $("#timer").html("Time Remaining: 6");
+    $("#question").html(questions[k].question);
+    for (var i = 0; i < 4; i++) {
+        $(".option:eq(" + i + ")").html(questions[k].opt[i]);
+    }
+        
+    tt = setInterval(function() {
+        time--;
+        if (time < 0) {
+            $(".alert:eq(0)").fadeIn();
+            $(".alert:eq(0)").html("時間到！");
+            $(".option").attr("disabled", "true");
+
+            clearInterval(tt);
+
+            setTimeout(function() {
+                $(".option").removeAttr("disabled");
+                $(".alert:eq(0)").fadeOut();
+                if (k + 1 <= 5) {
+                    numQuestion = k + 1;
+                    start(k + 1);
+                }
+                else
+                {
+                    endGame();
+                }
+            }, 2000);
+    }
+        else
+            $("#timer").html("Time Remaining: " + time);
+    }, 1000);
+}
+
+// ansering
+$(".option").click(function(){
+    // console.log($(this).attr("data-id"));
+    $(this).removeClass("bg-primary");
+
+    // correct
+    if ($(this).attr("data-id") == ans) {
+        $(this).addClass("bg-info");
+        $(".alert:eq(1)").fadeIn();
+        $(".alert:eq(1)").html("答對了！！！");
+        score++;
+    }
+    // incorrect
+    else
+    {
+        $(".alert:eq(0)").fadeIn();
+        $(".alert:eq(0)").html("答錯了...");
+        $(this).addClass("bg-danger");
+    }
+    $("#score").html("Score: " + score);
+    $(".option").attr("disabled", "true");
+    clearInterval(tt);
+    if (numQuestion + 1 <= 5) 
+    {
+        setTimeout(function() {
+            $(".option").removeClass("bg-info bg-danger")
+                        .addClass("bg-primary");
+            numQuestion++;
+            $(".option").removeAttr("disabled");
+            start(numQuestion);
+        }, 2000);
+    }
+    else
+    {
+        endGame();
+    }
+});
+
+// prepare the game
 $("#button-addon2").click(function() {
     // Get the questions
-    var questions = {};
+    $(".alert:eq(0)").hide();
     var k = 0;
+    name = $("#start-game-btn>input").val();
+    if (name.length == 0) {
+        $(".alert:eq(0)").fadeIn();
+        $(".alert:eq(0)").html("請先填寫真實姓名");
+        return;
+    }
+
     for (i = 0; i < 5; i++) {
         var number = Math.floor((Math.random() * 24) + 2);
         // console.log(number);
@@ -47,7 +131,7 @@ $("#button-addon2").click(function() {
                 console.log(data);
                 if (k == 5) {
                     console.log(questions);
-                    start(questions, 1);
+                    start(1);
                 }
             },
             error: function(e){

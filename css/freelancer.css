@@ -70,6 +70,10 @@ section h2 {
   }
 }
 
+.alert {
+  display: none;
+}
+
 .contact_img {
   width: 200px;
 }
