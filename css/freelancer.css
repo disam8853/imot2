@@ -1,5 +1,5 @@
 body {
-  font-family: 'Lato';
+  font-family: 'Lato', 'Microsoft JhengHei';
 }
 
 h1,
@@ -81,6 +81,10 @@ section h2 {
 .option {
   width: 88%;
   margin: 10px;
+}
+
+.phone {
+  color: white;
 }
 
 .btn-xl {
