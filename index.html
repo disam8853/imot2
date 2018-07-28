@@ -332,6 +332,49 @@
       <div class="container">
         <h2 class="text-center text-uppercase text-white">知識王</h2>
         <hr class="star-light mb-5">
+        
+        <div class="input-group mb-3" id="start-game-btn">
+          <input type="text" class="form-control" placeholder="輸入你的真實姓名" aria-label="真實姓名" aria-describedby="button-addon2">
+          <div class="input-group-append">
+            <button class="btn bg-dark text-white" type="button" id="button-addon2">開始遊戲！</button>
+          </div>
+        </div>
+
+        <div class="card text-center border-light text-dark mb-3" id="game-shape">
+          <div class="card-header row">
+            <div class="col-8 offset-2">
+              <p id="timer">Time Remaining: 6</p>
+            </div>
+            <div class="col-2 text-right">
+              Score: 0
+            </div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title" id="question"></h5>
+            <!-- <p class="card-text">IM</p> -->
+            <div class="row">
+              <div class="col-md-6">
+                <a href="#" class="btn btn-primary option"></a>
+              </div>
+              <div class="col-md-6">
+                <a href="#" class="btn btn-primary option"></a>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <a href="#" class="btn btn-primary option"></a>
+              </div>
+              <div class="col-md-6">
+                <a href="#" class="btn btn-primary option"></a>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer text-muted">
+            IM
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -444,7 +487,7 @@
       </div>
     </section>
 
-    <!-- Portfolio Grid Section -->
+    <!-- 贊助廠商 -->
     <section class="portfolio" id="sponsors">
       <div class="container">
         <h2 class="text-center text-uppercase text-secondary mb-0">贊助廠商</h2>
@@ -651,6 +694,7 @@
     <!-- Custom scripts for this template -->
     <script src="js/freelancer.min.js"></script>
     <script src="js/link2SpreadSheet.js"></script>
+    <script src="js/game.js"></script>
 
   </body>
 
