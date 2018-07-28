@@ -120,10 +120,10 @@ $("#button-addon2").click(function() {
     // get 5 different number
     var number = [];
     for (i = 0; i < 5; i++){
-        var temp = Math.floor((Math.random() * 34) + 2);
+        var temp = Math.floor((Math.random() * 36) + 2);
         while (number.includes(temp) == true)
         {
-            temp = Math.floor((Math.random() * 34) + 2);
+            temp = Math.floor((Math.random() * 36) + 2);
         }
         number[i] = temp;
     }
