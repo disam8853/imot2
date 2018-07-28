@@ -8,7 +8,8 @@ var name;
 
 function endGame(){
     // display the result to users
-
+    $(".alert:eq(1)").fadeIn()
+                     .html("遊戲結束！恭喜你獲得" + score + "分。");
     // send result to google sheet
     var data = {
         name: name,
@@ -35,6 +36,7 @@ function start(k) {
     for (var i = 0; i < 4; i++) {
         $(".option:eq(" + i + ")").html(questions[k].opt[i]);
     }
+     $("#cate").html(questions[k].cate);
         
     tt = setInterval(function() {
         time--;
@@ -112,6 +114,7 @@ $("#button-addon2").click(function() {
         $(".alert:eq(0)").html("請先填寫真實姓名");
         return;
     }
+    $("#name").html(name);
 
     for (i = 0; i < 5; i++) {
         var number = Math.floor((Math.random() * 24) + 2);
