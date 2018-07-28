@@ -8,7 +8,8 @@ var name;
 
 function endGame(){
     // display the result to users
-
+    $(".alert:eq(1)").fadeIn()
+                     .html("遊戲結束！恭喜你獲得" + score + "分。");
     // send result to google sheet
     var data = {
         name: name,
