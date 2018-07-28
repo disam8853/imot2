@@ -70,9 +70,9 @@ $(".option").click(function(){
 
     // correct
     if ($(this).attr("data-id") == ans) {
-        $(this).addClass("bg-info");
-        $(".alert:eq(1)").fadeIn();
-        $(".alert:eq(1)").html("答對了！！！");
+        $(this).addClass("bg-success");
+        $(".alert:eq(1)").fadeIn()
+                         .html("答對了！！！");
         score++;
     }
     // incorrect
