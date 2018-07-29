@@ -37,7 +37,7 @@ function start(k) {
     for (var i = 0; i < 4; i++) {
         $(".option:eq(" + i + ")").html(questions[k].opt[i]);
     }
-     $("#cate").html(questions[k].cate);
+    $("#cate").html(questions[k].cate);
         
     tt = setInterval(function() {
         time--;
@@ -60,7 +60,7 @@ function start(k) {
                     endGame();
                 }
             }, 2000);
-    }
+        }
         else
             $("#timer").html("Time Remaining: " + time);
     }, 1000);
@@ -117,13 +117,13 @@ $("#button-addon2").click(function() {
     }
     $("#name").html(name);
 
-    // get 5 different number
+    // get 5 different numbers
     var number = [];
     for (i = 0; i < 5; i++){
-        var temp = Math.floor((Math.random() * 34) + 2);
+        var temp = Math.floor((Math.random() * 40) + 2);
         while (number.includes(temp) == true)
         {
-            temp = Math.floor((Math.random() * 34) + 2);
+            temp = Math.floor((Math.random() * 40) + 2);
         }
         number[i] = temp;
     }
@@ -144,7 +144,7 @@ $("#button-addon2").click(function() {
                 k++;
                 questions[k] = data;
                 // console.log(data);
-                if (k == 5) {
+                if (k == 1) {
                     // console.log(questions);
                     start(1);
                 }
