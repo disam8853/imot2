@@ -1,5 +1,5 @@
 function send2SpreadSheet() {
-    var name = $('#name').val();
+    var name = $('#skrname').val();
     var dp = $('#dp').val();
     var birthday = $('#birthday').val();
     var gender = $('#gender').val();
@@ -40,6 +40,8 @@ function send2SpreadSheet() {
         idNum: "身份證字號 ? 不會亂使用的 ><",
         size: "營服 size ?沒有你的尺寸?",
     };
+    console.log(typeof(name));
+    console.log(name);
     for(key in warnmsg){
         if(data[key] === "" ){
             alert(warnmsg[key]);
