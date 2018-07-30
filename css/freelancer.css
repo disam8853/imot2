@@ -51,6 +51,7 @@ hr.star-light:after {
 hr.star-black:after {
   color: #fff;
   background-color: black;
+  border-radius: 20px;
 }
 
 hr.star-dark {
@@ -197,7 +198,8 @@ section h2 {
 }
 
 header.masthead {
-  background-image: url(../img/night-sky.jpg);
+  background: black url(../img/night-sky.jpg) center center fixed no-repeat;
+  background-size: cover;
   padding-top: calc(6rem + 72px);
   padding-bottom: 6rem;
 }
@@ -430,6 +432,8 @@ a:focus, a:hover, a:active {
   border-color: #dc3545;
 }
 
-/*#run-down {
-  background-image: url(../img/night-sky.jpg);
-}*/
+
+.bg-night {
+  background: black url(../img/night-sky.jpg) center center fixed no-repeat;
+  background-size: cover;
+}
