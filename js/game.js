@@ -28,11 +28,11 @@ function endGame(){
 }
 
 function start(k) {
-    var time = 6;
+    var time = 8;
     ans = questions[k].ans.charAt(3);
 
     $(".alert").hide();
-    $("#timer").html("Time Remaining: 6");
+    $("#timer").html("Time Remaining: 8");
     $("#question").html(questions[k].question);
     for (var i = 0; i < 4; i++) {
         $(".option:eq(" + i + ")").html(questions[k].opt[i]);
