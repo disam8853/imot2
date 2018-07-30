@@ -405,3 +405,18 @@ a:focus, a:hover, a:active {
 .download-a {
   color: white;
 }
+
+.btn-primary[disabled]:hover, .btn-primary[disabled]:focus, .btn-primary[disabled]:active {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-success[disabled]:hover, .btn-success[disabled]:focus, .btn-success[disabled]:active {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn-danger[disabled]:hover, .btn-danger[disabled]:focus, .btn-danger[disabled]:active {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}

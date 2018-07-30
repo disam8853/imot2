@@ -31,7 +31,7 @@ function start(k) {
     var time = 6;
     ans = questions[k].ans.charAt(3);
 
-    $(".alert").fadeOut();
+    $(".alert").hide();
     $("#timer").html("Time Remaining: 6");
     $("#question").html(questions[k].question);
     for (var i = 0; i < 4; i++) {
@@ -147,6 +147,9 @@ $("#button-addon2").click(function() {
                 if (k == 1) {
                     // console.log(questions);
                     start(1);
+                }
+                else if (k == 5) {
+                    console.log(questions);
                 }
             },
             error: function(e){
