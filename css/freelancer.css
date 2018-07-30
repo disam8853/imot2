@@ -13,7 +13,8 @@ h6 {
 }
 
 hr.star-light,
-hr.star-dark {
+hr.star-dark,
+hr.star-black {
   max-width: 15rem;
   padding: 0;
   text-align: center;
@@ -26,7 +27,8 @@ hr.star-dark {
 }
 
 hr.star-light:after,
-hr.star-dark:after {
+hr.star-dark:after,
+hr.star-black:after {
   position: relative;
   top: -.8em;
   display: inline-block;
@@ -36,13 +38,19 @@ hr.star-dark:after {
   font-size: 2em;
 }
 
-hr.star-light {
+hr.star-light,
+hr.star-black {
   border-color: #fff;
 }
 
 hr.star-light:after {
   color: #fff;
   background-color: #18BC9C;
+}
+
+hr.star-black:after {
+  color: #fff;
+  background-color: black;
 }
 
 hr.star-dark {
@@ -189,6 +197,7 @@ section h2 {
 }
 
 header.masthead {
+  background-image: url(../img/night-sky.jpg);
   padding-top: calc(6rem + 72px);
   padding-bottom: 6rem;
 }
@@ -420,3 +429,7 @@ a:focus, a:hover, a:active {
   background-color: #dc3545;
   border-color: #dc3545;
 }
+
+/*#run-down {
+  background-image: url(../img/night-sky.jpg);
+}*/
