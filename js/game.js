@@ -64,7 +64,7 @@ function endGame(){
     $(".alert").hide();
     // display the result to users
     $(".alert:eq(1)").fadeIn()
-                     .html("遊戲結束！恭喜你獲得" + score + "分。" + "<button type=\"button\" class=\"btn btn-link\" onclick=restart()>重新開始</button>");
+                     .html("遊戲結束！恭喜你獲得" + score + "分。" + "<button type=\"button\" class=\"btn btn-link\" onclick=restart()>再玩一次</button>");
     $("#restart").show();
     // send result to google sheet
     var data = {
