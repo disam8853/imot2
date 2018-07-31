@@ -188,7 +188,7 @@ $("#button-addon2").click(function() {
 
     // get 5 different numbers
     var number = [];
-    for (i = 1; i < 5; i++){
+    for (i = 0; i < 5; i++){
         var temp = Math.floor(Math.random() * 41) + 2;
         while (number.includes(temp) == true)
         {
@@ -200,7 +200,6 @@ $("#button-addon2").click(function() {
     var k = 0;
     for (i = 0; i < 5; i++) {
         var num = number[i];
-        // console.log(num);
         var data = {
             number: num,
         }
