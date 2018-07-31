@@ -448,13 +448,25 @@ a:focus, a:hover, a:active {
 }
 
 .carousel {
-  background-color: gray;
+  background-color: #2a7f6e;
 }
 
+/* iphone */
+@media only screen and (max-width: 376px) {
+  .carousel-inner > .carousel-item {
+    height: 230px;
+  }
+} 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 376px) {
   .carousel-inner > .carousel-item {
     height: 316px;
+  }
+} 
+/* iphone plus */
+@media only screen and (min-width: 414px) {
+  .carousel-inner > .carousel-item {
+    height: 256px;
   }
 } 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -520,7 +532,7 @@ a:focus, a:hover, a:active {
   left: 50%;
   top: 50%;
   border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid #18BC9C; /* Blue */
+  border-top: 16px solid #18BC9C; /* Green */
   border-radius: 50%;
   width: 120px;
   height: 120px;
