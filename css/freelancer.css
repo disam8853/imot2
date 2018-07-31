@@ -90,6 +90,7 @@ section h2 {
 .option {
   width: 88%;
   margin: 10px;
+  white-space: normal;
 }
 
 .phone {

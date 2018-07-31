@@ -45,6 +45,7 @@ function restart() {
                     score = 0;
                     $("#loader").hide();
                     $("#bg-blur").hide();
+                    $("#score").html("分數：0");
                     start(1);
                 }
                 else if (k == 5) {
@@ -185,15 +186,15 @@ $("#button-addon2").click(function() {
     $("#name").html(name);
 
     // get 5 different numbers
-    var number = [];
-    for (i = 0; i < 5; i++){
-        var temp = Math.floor((Math.random() * 40) + 2);
-        while (number.includes(temp) == true)
-        {
-            temp = Math.floor((Math.random() * 40) + 2);
-        }
-        number[i] = temp;
-    }
+    var number = [24,24,24,24,24];
+    // for (i = 1; i < 5; i++){
+    //     var temp = Math.floor((Math.random() * 40) + 2);
+    //     while (number.includes(temp) == true)
+    //     {
+    //         temp = Math.floor((Math.random() * 40) + 2);
+    //     }
+    //     number[i] = temp;
+    // }
 
     var k = 0;
     for (i = 0; i < 5; i++) {
