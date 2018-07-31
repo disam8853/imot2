@@ -451,12 +451,34 @@ a:focus, a:hover, a:active {
   background-color: gray;
 }
 
-.carousel-inner > .carousel-item {
-  height: 740px;
-}
-@media only screen and (max-width: 768px) {
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
   .carousel-inner > .carousel-item {
     height: 316px;
+  }
+} 
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .carousel-inner > .carousel-item {
+    height: 316px;
+  }
+} 
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .carousel-inner > .carousel-item {
+    height: 460px;
+  }
+} 
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .carousel-inner > .carousel-item {
+    height: 620px;
+  }
+} 
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .carousel-inner > .carousel-item {
+    height: 740px;
   }
 }
 
