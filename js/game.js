@@ -7,6 +7,9 @@ var questions = {};
 var name;
 
 function restart() {
+    $("#loader").show();
+    $("#bg-blur").show();
+
     // get 5 different numbers
     var number = [];
     for (i = 0; i < 5; i++){
@@ -40,6 +43,8 @@ function restart() {
                     $(".option").removeAttr("disabled");
                     numQuestion = 1;
                     score = 0;
+                    $("#loader").hide();
+                    $("#bg-blur").hide();
                     start(1);
                 }
                 else if (k == 5) {
@@ -210,6 +215,8 @@ $("#button-addon2").click(function() {
                 if (k == 1) {
                     // console.log(questions);
                     $(".option").removeAttr("disabled");
+                    $("#loader").hide();
+                    $("#bg-blur").hide();
                     start(1);
                 }
                 else if (k == 5) {
@@ -223,6 +230,8 @@ $("#button-addon2").click(function() {
     }
 
     $("#game-shape").fadeIn();
+    $("#loader").show();
+    $("#bg-blur").show();
     $(".option").attr("disabled", "true");
     $("#start-game-btn").hide();
 });
