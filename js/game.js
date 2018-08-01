@@ -212,7 +212,6 @@ $("#button-addon2").click(function() {
             success: function(data) {
                 k++;
                 questions[k] = data;
-                // console.log(data);
                 if (k == 1) {
                     // console.log(questions);
                     $(".option").removeAttr("disabled");
