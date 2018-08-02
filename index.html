@@ -531,8 +531,11 @@
           <div class="control-group">
             <div class="form-group floating-label-form-group controls mb-0 pb-2">
               <label>營服尺寸</label>
-              <input class="form-control" name="size" id="size" type="text" placeholder="營服 size"  required="required">
+              <input class="form-control" name="size" id="size" type="text" placeholder="營服 size"  required="required" onfocus="showSize()" onblur="hideSize()">
               <p class="help-block text-danger"></p>
+              <div id="sizeImg" style="display: none ;">
+                <img src="img/chicSize.jpg">
+              </div>
             </div>
           </div>
           <div class="control-group">
@@ -892,6 +895,7 @@
   <script src="js/link2SpreadSheet.js"></script>
   <script src="js/game.js"></script>
   <script src="js/downloadWriter.js"></script>
+  <script src="js/misc.js"></script>
 </body>
 
 </html>
