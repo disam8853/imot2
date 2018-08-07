@@ -8,16 +8,6 @@
   font-family: 'Roboto', sans-serif;
 }
 
-.well {
-  padding: 25px;
-  background-color: rgba(245, 245, 245, 0.7);
-  border-radius: 5px;
-}
-
-.well p {
-  font-size:
-}
-
 .btn-group-justified {
   margin: 0 auto;
 }
@@ -79,12 +69,15 @@ a:hover{
   border-top: 20px dashed rgb(180, 75, 119);
   border-bottom: 10px solid #A48E4E;
   background-color: rgb(240, 150, 150);
+  padding-top:50px;
+  height: 850px;
+  min-height: 100vh;
 }
 
 #casino .content:nth-child(1) {
   text-align: center;
-  background: url('../img/machine.png') no-repeat 50% 80px;
-  background-position-x: calc(50% + 30px);
+  background: url('../img/machine-01.png') no-repeat 50% -40px;
+  background-position-x: calc(50% + 7px);
   min-height: 580px;
 }
 
@@ -105,6 +98,7 @@ a:hover{
   border: 5px solid #CF5178;
   height: 100px;
   display: inline-block;
+  margin-top: -60px;
 }
 .row{
   height: 100px;
