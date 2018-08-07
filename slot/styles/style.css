@@ -49,27 +49,27 @@ a:hover{
 }
 
 .slot1 {
-  background-image: url("../img/slots1.jpg");
+  background-image: url("../img/slot1.png");
 }
 
 .slot2 {
-  background-image: url("../img/slots2.jpg");
+  background-image: url("../img/slot2.png");
 }
 
 .slot3 {
-  background-image: url("../img/slots3.jpg");
+  background-image: url("../img/slot3.png");
 }
 
 .slot4 {
-  background-image: url("../img/slots4.jpg");
+  background-image: url("../img/slot4.png");
 }
 
 .slot5 {
-  background-image: url("../img/slots5.jpg");
+  background-image: url("../img/slot5.png");
 }
 
 .slot6 {
-  background-image: url("../img/slots6.jpg");
+  background-image: url("../img/slot6.png");
 }
 
 /*
@@ -103,8 +103,11 @@ a:hover{
 .slotMachine{
   width: 36.333333%;
   border: 5px solid #CF5178;
-  height: 300px;
+  height: 100px;
   display: inline-block;
+}
+.row{
+  height: 100px;
 }
 
 #casino .btn-group {
