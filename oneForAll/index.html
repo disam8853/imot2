@@ -131,7 +131,8 @@
         const btnStop = document.querySelector('#casinoStop');
         var casinos = [];
         var mCasinos = [];
-        for (let i = 0; i < 10; ++i) {
+        for (let i = 0; i < 9; ++i) {
+            console.log('#casino' + (i + 1));
             casinos[i] = document.querySelector('#casino' + (i + 1));
             mCasinos[i] = new SlotMachine(casinos[i], {
                 active: i % 6,

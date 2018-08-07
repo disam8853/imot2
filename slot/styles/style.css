@@ -61,30 +61,6 @@ a:hover{
 .slot6 {
   background-image: url("../img/slots6.jpg");
 }
-
-/* .slot1 {
-  background-image: url("../img/slot1.png");
-}
-
-.slot2 {
-  background-image: url("../img/slot2.png");
-}
-
-.slot3 {
-  background-image: url("../img/slot3.png");
-}
-
-.slot4 {
-  background-image: url("../img/slot4.png");
-}
-
-.slot5 {
-  background-image: url("../img/slot5.png");
-}
-
-.slot6 {
-  background-image: url("../img/slot6.png");
-} */
 /*
  * Casino
  */
@@ -119,7 +95,7 @@ a:hover{
 .slotMachine{
   width: 36.333333%;
   border: 5px solid #CF5178;
-  height: 100px;
+  height: 300px;
   display: inline-block;
   margin-top: -60px;
 }
