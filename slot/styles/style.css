@@ -71,11 +71,12 @@ a:hover{
   background-color: rgb(240, 150, 150);
   padding-top:50px;
   height: 850px;
+  min-height: 100vh;
 }
 
 #casino .content:nth-child(1) {
   text-align: center;
-  background: url('../img/machine-01.png') no-repeat 50% 20px;
+  background: url('../img/machine-01.png') no-repeat 50% -40px;
   background-position-x: calc(50% + 7px);
   min-height: 580px;
 }
@@ -97,6 +98,7 @@ a:hover{
   border: 5px solid #CF5178;
   height: 300px;
   display: inline-block;
+  margin-top: -60px;
 }
 
 #casino .btn-group {
