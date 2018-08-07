@@ -69,6 +69,8 @@ a:hover{
   border-top: 20px dashed rgb(180, 75, 119);
   border-bottom: 10px solid #A48E4E;
   background-color: rgb(240, 150, 150);
+  padding-top:50px;
+  height: 850px;
 }
 
 #casino .content:nth-child(1) {
