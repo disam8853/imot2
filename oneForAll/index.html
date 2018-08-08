@@ -38,7 +38,7 @@
         <div class="content">
             <h1>賭場拉霸機</h1>
             <h1>累計獎金：</h1>
-            <div>
+            <div id="Allslots">
                 <div id="casino1" class="slotMachine" style="margin-left: -65px;">
                     <div class="slot slot1"></div>
                     <div class="slot slot2"></div>
@@ -66,57 +66,57 @@
                     <div class="slot slot6"></div>
                 </div>
                 <div id="casino4" class="slotMachine" style="margin-left: -65px;">
-                        <div class="slot slot1"></div>
-                        <div class="slot slot2"></div>
-                        <div class="slot slot3"></div>
-                        <div class="slot slot4"></div>
-                        <div class="slot slot5"></div>
-                        <div class="slot slot6"></div>
-                    </div>
-    
-                    <div id="casino5" class="slotMachine">
-                        <div class="slot slot1"></div>
-                        <div class="slot slot2"></div>
-                        <div class="slot slot3"></div>
-                        <div class="slot slot4"></div>
-                        <div class="slot slot5"></div>
-                        <div class="slot slot6"></div>
-                    </div>
-    
-                    <div id="casino6" class="slotMachine">
-                        <div class="slot slot1"></div>
-                        <div class="slot slot2"></div>
-                        <div class="slot slot3"></div>
-                        <div class="slot slot4"></div>
-                        <div class="slot slot5"></div>
-                        <div class="slot slot6"></div>
-                    </div>
-                    <div id="casino7" class="slotMachine" style="margin-left: -65px;">
-                            <div class="slot slot1"></div>
-                            <div class="slot slot2"></div>
-                            <div class="slot slot3"></div>
-                            <div class="slot slot4"></div>
-                            <div class="slot slot5"></div>
-                            <div class="slot slot6"></div>
-                        </div>
-        
-                        <div id="casino8" class="slotMachine">
-                            <div class="slot slot1"></div>
-                            <div class="slot slot2"></div>
-                            <div class="slot slot3"></div>
-                            <div class="slot slot4"></div>
-                            <div class="slot slot5"></div>
-                            <div class="slot slot6"></div>
-                        </div>
-        
-                        <div id="casino9" class="slotMachine">
-                            <div class="slot slot1"></div>
-                            <div class="slot slot2"></div>
-                            <div class="slot slot3"></div>
-                            <div class="slot slot4"></div>
-                            <div class="slot slot5"></div>
-                            <div class="slot slot6"></div>
-                        </div>
+                    <div class="slot slot1"></div>
+                    <div class="slot slot2"></div>
+                    <div class="slot slot3"></div>
+                    <div class="slot slot4"></div>
+                    <div class="slot slot5"></div>
+                    <div class="slot slot6"></div>
+                </div>
+
+                <div id="casino5" class="slotMachine">
+                    <div class="slot slot1"></div>
+                    <div class="slot slot2"></div>
+                    <div class="slot slot3"></div>
+                    <div class="slot slot4"></div>
+                    <div class="slot slot5"></div>
+                    <div class="slot slot6"></div>
+                </div>
+
+                <div id="casino6" class="slotMachine">
+                    <div class="slot slot1"></div>
+                    <div class="slot slot2"></div>
+                    <div class="slot slot3"></div>
+                    <div class="slot slot4"></div>
+                    <div class="slot slot5"></div>
+                    <div class="slot slot6"></div>
+                </div>
+                <div id="casino7" class="slotMachine" style="margin-left: -65px;">
+                    <div class="slot slot1"></div>
+                    <div class="slot slot2"></div>
+                    <div class="slot slot3"></div>
+                    <div class="slot slot4"></div>
+                    <div class="slot slot5"></div>
+                    <div class="slot slot6"></div>
+                </div>
+
+                <div id="casino8" class="slotMachine">
+                    <div class="slot slot1"></div>
+                    <div class="slot slot2"></div>
+                    <div class="slot slot3"></div>
+                    <div class="slot slot4"></div>
+                    <div class="slot slot5"></div>
+                    <div class="slot slot6"></div>
+                </div>
+
+                <div id="casino9" class="slotMachine">
+                    <div class="slot slot1"></div>
+                    <div class="slot slot2"></div>
+                    <div class="slot slot3"></div>
+                    <div class="slot slot4"></div>
+                    <div class="slot slot5"></div>
+                    <div class="slot slot6"></div>
+                </div>
             </div>
             <div class="btn-group btn-group-justified" role="group">
                 <button id="casinoShuffle" type="button" class="btn btn-primary btn-lg">Shuffle!</button>
@@ -152,17 +152,17 @@
             switch (count) {
                 case 3:
                     for (let i = 0; i < 3; ++i) {
-                        mCasinos[i].stop();
+                        mCasinos[i*3].stop();
                     }
                     break;
                 case 2:
                     for (let i = 0; i < 3; ++i) {
-                        mCasinos[i+3].stop();
+                        mCasinos[i*3 + 1].stop();
                     }
                     break;
                 case 1:
                     for (let i = 0; i < 3; ++i) {
-                        mCasinos[i+6].stop();
+                        mCasinos[i*3 + 2].stop();
                     }
                     break;
             }

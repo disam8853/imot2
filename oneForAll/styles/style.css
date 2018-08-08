@@ -81,7 +81,7 @@ a:hover{
 }
 
 #casino .content > div {
-  padding-top: 165px;
+  padding-top: 13px;
   width: 300px;
   margin: 0 auto;
   transform: translateX(30px);
@@ -97,10 +97,7 @@ a:hover{
   border: 5px solid #CF5178;
   height: 100px;
   display: inline-block;
-  margin-top: -60px;
-}
-.row{
-  height: 100px;
+  /* margin-top: -60px; */
 }
 
 #casino .btn-group {
@@ -116,3 +113,7 @@ a:hover{
 #casino .btn-group .btn:hover, .btn-group .btn:focus {
   background-color: rgb(180, 75, 119);
 }
+/* 
+#Allslots{
+  padding-top: 0px;
+} */
