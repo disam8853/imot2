@@ -13,10 +13,10 @@ function restart() {
     // get 5 different numbers
     var number = [];
     for (i = 0; i < 5; i++){
-        var temp = Math.floor((Math.random() * 40) + 2);
+        var temp = Math.floor((Math.random() * 44) + 2);
         while (number.includes(temp) == true)
         {
-            temp = Math.floor((Math.random() * 40) + 2);
+            temp = Math.floor((Math.random() * 44) + 2);
         }
         number[i] = temp;
     }
@@ -189,10 +189,10 @@ $("#button-addon2").click(function() {
     // get 5 different numbers
     var number = [];
     for (i = 0; i < 5; i++){
-        var temp = Math.floor(Math.random() * 41) + 2;
+        var temp = Math.floor(Math.random() * 44) + 2;
         while (number.includes(temp) == true)
         {
-            temp = Math.floor(Math.random() * 41) + 2;
+            temp = Math.floor(Math.random() * 44) + 2;
         }
         number[i] = temp;
     }
