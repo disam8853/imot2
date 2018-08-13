@@ -90,6 +90,7 @@ section h2 {
 .option {
   width: 88%;
   margin: 10px;
+  white-space: normal;
 }
 
 .phone {
@@ -198,8 +199,8 @@ section h2 {
 }
 
 header.masthead {
-  background: black url(../img/night-sky.jpg) center center fixed no-repeat;
-  background-size: cover;
+  /*background: black url(../img/night-sky.jpg) center center fixed no-repeat;*/
+  /*background-size: cover;*/
   padding-top: calc(6rem + 72px);
   padding-bottom: 6rem;
 }
@@ -432,7 +433,6 @@ a:focus, a:hover, a:active {
   border-color: #dc3545;
 }
 
-
 .bg-night {
   z-index: -10;
   background: black url(../img/night-sky.jpg) center center fixed no-repeat;
@@ -440,4 +440,125 @@ a:focus, a:hover, a:active {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+@media only screen and (max-width: 768px) {
+  .bg-night {
+      background-attachment: scroll;
+  }
+}
+
+.carousel {
+  background-color: #2a7f6e;
+}
+
+/* iphone */
+@media only screen and (max-width: 376px) {
+  .carousel-inner > .carousel-item {
+    height: 230px;
+  }
+} 
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (min-width: 376px) {
+  .carousel-inner > .carousel-item {
+    height: 316px;
+  }
+} 
+/* iphone plus */
+@media only screen and (min-width: 414px) {
+  .carousel-inner > .carousel-item {
+    height: 256px;
+  }
+} 
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .carousel-inner > .carousel-item {
+    height: 316px;
+  }
+} 
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .carousel-inner > .carousel-item {
+    height: 460px;
+  }
+} 
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .carousel-inner > .carousel-item {
+    height: 620px;
+  }
+} 
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .carousel-inner > .carousel-item {
+    height: 740px;
+  }
+}
+
+.carousel-inner > .carousel-item > img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  max-height: 800px;
+  width: auto;
+}
+
+.card-header {
+  font-size: 25px;
+}
+
+@media only screen and (max-width: 768px) {
+  .card-header {
+    font-size: 17px;
+  }
+}
+
+#bg-blur {
+  display: none;
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+#loader {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #18BC9C; /* Green */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  margin: -60px 0 0 -60px;
+  z-index: 2;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@media only screen and (max-width: 768px) {
+  #loader {
+    border: 12px solid #f3f3f3;;
+    border-top: 12px solid #18BC9C;
+    width: 100px;
+    height: 100px;
+    margin: -50px 0 0 -50px;
+  }
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }

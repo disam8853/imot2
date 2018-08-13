@@ -6,11 +6,66 @@ var numQuestion = 1;
 var questions = {};
 var name;
 
+function restart() {
+    $("#loader").show();
+    $("#bg-blur").show();
+
+    // get 5 different numbers
+    var number = [];
+    for (i = 0; i < 5; i++){
+        var temp = Math.floor((Math.random() * 44) + 2);
+        while (number.includes(temp) == true)
+        {
+            temp = Math.floor((Math.random() * 44) + 2);
+        }
+        number[i] = temp;
+    }
+
+    var k = 0;
+    for (i = 0; i < 5; i++) {
+        var num = number[i];
+        // console.log(num);
+        var data = {
+            number: num,
+        }
+
+        $.ajax({
+            type: "get",
+            url: "https://script.google.com/macros/s/AKfycbwgJiyfx57cqCtpPxBcie5AqjYONmhSnu-CfBVt8KSKfpFkibE/exec",
+            dataType: 'json',
+            data: data,
+            success: function(data) {
+                k++;
+                questions[k] = data;
+                // console.log(data);
+                if (k == 1) {
+                    // console.log(questions);
+                    $(".option").removeAttr("disabled");
+                    numQuestion = 1;
+                    score = 0;
+                    $("#loader").hide();
+                    $("#bg-blur").hide();
+                    $("#score").html("分數：0");
+                    start(1);
+                }
+                else if (k == 5) {
+                    console.log(questions);
+                }
+            },
+            error: function(e){
+                console.log(e);
+            }
+        });
+    }
+
+}
+
 function endGame(){
     $(".alert").hide();
     // display the result to users
     $(".alert:eq(1)").fadeIn()
-                     .html("遊戲結束！恭喜你獲得" + score + "分。");
+                     .html("遊戲結束！恭喜你獲得" + score + "分。" + "<button type=\"button\" class=\"btn btn-link\" onclick=restart()>再玩一次</button>");
+    $("#restart").show();
     // send result to google sheet
     var data = {
         name: name,
@@ -32,7 +87,8 @@ function start(k) {
     ans = questions[k].ans.charAt(3);
 
     $(".alert").hide();
-    $("#timer").html("Time Remaining: 8");
+    $("#timer").html("時間還剩8秒鐘")
+               .css("color", "black");
     $("#question").html(questions[k].question);
     for (var i = 0; i < 4; i++) {
         $(".option:eq(" + i + ")").html(questions[k].opt[i]);
@@ -62,7 +118,18 @@ function start(k) {
             }, 2000);
         }
         else
-            $("#timer").html("Time Remaining: " + time);
+        {
+            $("#timer").html("時間還剩" + time + "秒鐘");
+            if (time == 3) {
+                $("#timer").css("color", "orange");
+            }
+            else if (time == 2) {
+                $("#timer").css("color", "purple");
+            }
+            else if (time == 1) {
+                $("#timer").css("color", "red");
+            }
+        }
     }, 1000);
 }
 
@@ -85,20 +152,22 @@ $(".option").click(function(){
                          .html("答錯了...");
         $(this).addClass("btn-danger");
     }
-    $("#score").html("Score: " + score);
+
+    $("#score").html("分數：" + score);
     $(".option").attr("disabled", "true");
     clearInterval(tt);
     setTimeout(function() {
+        $(".option").removeClass("btn-success btn-danger")
+                    .addClass("btn-primary");
         if (numQuestion + 1 <= 5) 
         {
-            $(".option").removeClass("btn-success btn-danger")
-                        .addClass("btn-primary");
             numQuestion++;
             $(".option").removeAttr("disabled");
             start(numQuestion);
         }
         else
         {
+            clearInterval(tt);
             endGame();
         }
     }, 2000);
@@ -108,7 +177,7 @@ $(".option").click(function(){
 $("#button-addon2").click(function() {
     // Get the questions
     $(".alert:eq(0)").hide();
-    var k = 0;
+    
     name = $("#start-game-btn>input").val();
     if (name.length == 0) {
         $(".alert:eq(0)").fadeIn();
@@ -120,17 +189,17 @@ $("#button-addon2").click(function() {
     // get 5 different numbers
     var number = [];
     for (i = 0; i < 5; i++){
-        var temp = Math.floor((Math.random() * 40) + 2);
+        var temp = Math.floor(Math.random() * 44) + 2;
         while (number.includes(temp) == true)
         {
-            temp = Math.floor((Math.random() * 40) + 2);
+            temp = Math.floor(Math.random() * 44) + 2;
         }
         number[i] = temp;
     }
 
+    var k = 0;
     for (i = 0; i < 5; i++) {
         var num = number[i];
-        // console.log(num);
         var data = {
             number: num,
         }
@@ -143,9 +212,11 @@ $("#button-addon2").click(function() {
             success: function(data) {
                 k++;
                 questions[k] = data;
-                // console.log(data);
                 if (k == 1) {
                     // console.log(questions);
+                    $(".option").removeAttr("disabled");
+                    $("#loader").hide();
+                    $("#bg-blur").hide();
                     start(1);
                 }
                 else if (k == 5) {
@@ -159,5 +230,8 @@ $("#button-addon2").click(function() {
     }
 
     $("#game-shape").fadeIn();
+    $("#loader").show();
+    $("#bg-blur").show();
+    $(".option").attr("disabled", "true");
     $("#start-game-btn").hide();
 });

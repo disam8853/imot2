@@ -12,7 +12,7 @@ function send2SpreadSheet() {
     var size = $('#size').val();
     var dine = $('#dine').val();
     var comment = $('#comment').val();
-    var data = {
+    var jjson = {
         name: name,
         dp: dp,
         birthday: birthday,
@@ -41,7 +41,7 @@ function send2SpreadSheet() {
         size: "營服 size ?沒有你的尺寸?",
     };
     console.log(typeof(name));
-    console.log(name);
+    var data = JSON.stringify(jjson);
     for(key in warnmsg){
         if(data[key] === "" ){
             alert(warnmsg[key]);
@@ -50,9 +50,10 @@ function send2SpreadSheet() {
     }
     console.log(data);
     $.ajax({
-        type: "get",
+        type: "POST",
         url: "https://script.google.com/macros/s/AKfycbzEIRW3u6rIyAwnquSH4PZXxsSFMyoB67mPqsGJpX3AXSfc8znO/exec",
         data: data,
+        dataType:"json",
         success: function (response) {
             alert("success!");
             location.reload(false);
