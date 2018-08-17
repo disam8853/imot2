@@ -16,7 +16,7 @@ function GetDownloadList(){
                 if(colnum == 0){
                     html += '  <div class="col-md"><div class="text-center h4">OwO</div><div class=text-center>';
                 }
-                html += '<div class=text-center>' +  '<button type="button" class="btn bg-dark text-white">' +'<a href="' + objs[i].url + '" class="download-a">' + objs[i].name + '</a>' + '</button>' + '</div>';
+                html += '<div class=text-center>' +'<a href="' + objs[i].url + '" role="button" class="download-a btn bg-dark text-white">' + objs[i].name + '</a>' + '</div>';
                 colnum++;
                 if(colnum*3 >= len){
                     html += '</div>';
