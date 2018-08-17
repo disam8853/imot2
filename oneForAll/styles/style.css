@@ -1,4 +1,4 @@
- @charset "utf-8";
+@charset "utf-8";
 /* CSS Document */
 
 @import url(https://fonts.googleapis.com/css?family=Roboto);
@@ -39,28 +39,28 @@ a:hover{
 }
 
 .slot1 {
-  background-image: url("../img/slots1.jpg");
+  background-image: url("../img/slot1.png");
 }
 
 .slot2 {
-  background-image: url("../img/slots2.jpg");
+  background-image: url("../img/slot2.png");
 }
 
 .slot3 {
-  background-image: url("../img/slots3.jpg");
+  background-image: url("../img/slot3.png");
 }
 
 .slot4 {
-  background-image: url("../img/slots4.jpg");
+  background-image: url("../img/slot4.png");
 }
 
 .slot5 {
-  background-image: url("../img/slots5.jpg");
+  background-image: url("../img/slot5.png");
 }
 
 .slot6 {
-  background-image: url("../img/slots6.jpg");
-}
+  background-image: url("../img/slot6.png");
+} 
 /*
  * Casino
  */
@@ -81,7 +81,7 @@ a:hover{
 }
 
 #casino .content > div {
-  padding-top: 165px;
+  padding-top: 100px;
   width: 300px;
   margin: 0 auto;
   transform: translateX(30px);
@@ -95,12 +95,9 @@ a:hover{
 .slotMachine{
   width: 36.333333%;
   border: 5px solid #CF5178;
-  height: 300px;
-  display: inline-block;
-  margin-top: -60px;
-}
-.row{
   height: 100px;
+  display: inline-block;
+  /* margin-top: -60px; */
 }
 
 #casino .btn-group {
@@ -116,3 +113,7 @@ a:hover{
 #casino .btn-group .btn:hover, .btn-group .btn:focus {
   background-color: rgb(180, 75, 119);
 }
+ 
+#Allslots{
+  padding-top: 100px;
+} 
