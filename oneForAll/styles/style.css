@@ -117,3 +117,10 @@ a:hover{
 #Allslots{
   padding-top: 100px;
 } 
+
+.rule {
+  font-size: 30px;
+  position: absolute;
+  top: 20%;
+  left: 2%;
+}
